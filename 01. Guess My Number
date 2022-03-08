@@ -1,0 +1,24 @@
+system_number=$RANDOM
+no_of_chances=1
+for (( ; ; ))
+do
+
+  read -p "This is your chance $no_of_chances, guess the number: " user_number
+
+  if [ $user_number -eq $system_number ]
+  then
+    echo "Your quess is correct"
+    echo "You Guessed in $no_of_chances chance"
+    break
+  else
+    echo "Your guess is wrong"
+    if [ $user_number -ge $system_number ]
+    then
+        echo "please enter some lesser value than $suer_number"
+    else
+        echo "please enter some greater value than $suer_number"
+    fi
+  fi
+  no_of_chances=$((no_of_chances+1))
+
+done
